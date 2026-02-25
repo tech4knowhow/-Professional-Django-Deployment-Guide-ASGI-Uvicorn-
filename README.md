@@ -221,7 +221,7 @@ This guide uses **ASGI** + **Uvicorn** for deployment:
 👉 To aut run the app on browser nssm is prefered as the .ps1 code should configured throurgh Task Scheduler and it is not better consistent
 
 ## Step 6 ✅. Note: Configure the app/project for local and public as needed
-## Summary ✅. Consider the following during deploy Django web appln
+### Summary ✅. Consider the following during deploy Django web appln
 * → Get and locate the app,
 * → Loacalization also consider for gettext and configure it
 * → Install dependency/package to the venv

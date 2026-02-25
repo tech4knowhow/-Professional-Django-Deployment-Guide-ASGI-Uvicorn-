@@ -6,8 +6,8 @@
 * 😉 `PROJECTNAME/settings/development.py`
 * 😉 `PROJECTNAME/settings/production.py`
  
-### Step 1 ✅. Get and Locate the App
-### Step 2 ✅. Localization & Gettext Configuration
+## Step 1 ✅. Get and Locate the App
+## Step 2 ✅. Localization & Gettext Configuration
 // INTERNATIONALIZATION Configuration
 * `pip install --upgrade Pygments`
 * install package - download libintl-0.14.4-bin for win os
@@ -45,7 +45,7 @@ Now you can run: first rewrite the and set model.py foreach for .po to be create
 * `C:\Users\Administrator\appnameORprojectname\locale\am\LC_MESSAGES`
 * `python manage.py compilemessages`
 
-# FOR any other app:
+### For any other app:
 * e.g, `cd C:\Users\Administrator\PROJECTNAME\core` 
 // core should the app next to projectname
 * `mkdir locale`
@@ -97,7 +97,7 @@ Each language keeps its own header.
 4. **Delete .mo before compiling**
 5. **Python 3.12 is strict**
  
-### Step 3 ✅. Environment & Dependencies
+## Step 3 ✅. Environment & Dependencies
 * → Install **Python 3.13+**
 * → Install any code editor (e.g., **Visual Studio Code**)
 #### 2. Make sure you have the Django application you want to deploy
@@ -130,7 +130,7 @@ This guide uses **ASGI** + **Uvicorn** for deployment:
 **Delete the existing virtual environment (Optional)**
 `Remove-Item -Recurse -Force .\venv`
 
-### Step 4 ✅. Django Security Hardening
+## Step 4 ✅. Django Security Hardening
 🔧 **Configuration**
 * `DEBUG = False` in `settings.py`
 * `ALLOWED_HOSTS` set to your domain/IP
@@ -179,14 +179,14 @@ This guide uses **ASGI** + **Uvicorn** for deployment:
 `Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))`
 `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser`
 
-# for security - SSL
+### For security - SSL
 * `choco install mkcert`
 * `mkcert -install`
-# (C:\Users\Administrator\PROJECTNAME):
+* (C:\Users\Administrator\PROJECTNAME):
 * `mkcert 127.0.0.1 localhost`
 
 🔹 **Firewall: Allow 80/443 ONLY**
-# You need to create rules that allow the web traffic but block the "back doors" to your database and cache from the outside world.
+* You need to create rules that allow the web traffic but block the "back doors" to your database and cache from the outside world.
 # Run these commands once as Administrator to configure the Windows Firewall:
 🔹 **Allow Port 80 (for Django's internal redirect to HTTPS)**
 * `New-NetFirewallRule -DisplayName "PROJECTNAME-HTTP" -Direction Inbound -LocalPort 80 -Protocol TCP -Action Allow`
@@ -205,7 +205,7 @@ This guide uses **ASGI** + **Uvicorn** for deployment:
 # Verification Command: To see exactly what the world sees on your server, run:
 * `Get-NetFirewallRule | Where-Object { $_.Enabled -eq 'True' -and $_.Direction -eq 'Inbound' } | Select-Object DisplayName, Action`
 
-### Step 5 ✅. Auto-Run App (NSSM)
+## Step 5 ✅. Auto-Run App (NSSM)
 → Open PowerShell as Administrator and run this to install Chocolatey:
 * `Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))`
 
@@ -220,8 +220,8 @@ This guide uses **ASGI** + **Uvicorn** for deployment:
 
 👉 To aut run the app on browser nssm is prefered as the .ps1 code should configured throurgh Task Scheduler and it is not better consistent
 
-### Step 6 ✅. Note: Configure the app/project for local and public as needed
-### Summary ✅. Consider the following during deploy Django web appln
+## Step 6 ✅. Note: Configure the app/project for local and public as needed
+## Summary ✅. Consider the following during deploy Django web appln
 * → Get and locate the app,
 * → Loacalization also consider for gettext and configure it
 * → Install dependency/package to the venv

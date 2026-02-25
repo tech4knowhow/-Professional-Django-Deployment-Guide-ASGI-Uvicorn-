@@ -3,32 +3,25 @@
 👉 To maintain a professional workflow and avoid manual changes to your .env values when switching between your local machine and a production server, it is best practice to split your settings files:
 
 ### ⚙️ Professional Environment Setup
-
 * 😉 `PROJECTNAME/settings/development.py`
 * 😉 `PROJECTNAME/settings/production.py`
  
 ### STEP 1 ✅. GET AND LOCATE THE APP
-
 ### STEP 2 ✅. LOCALIZATION ALSO CONSIDER FOR GETTEXT AND CONFIGURE IT:
-
 // INTERNATIONALIZATION Configuration
-`pip install --upgrade Pygments`
-
+* `pip install --upgrade Pygments`
 * install package - download libintl-0.14.4-bin for win os
 * adding **gettext** to your Windows PATH so Django can use it for translations.
 
 🔧 **Step 1: Install gettext:**
 Download the **gettext binaries for Windows**:
-
 * [EZWinPorts gettext (recommended)](https://sourceforge.net/projects/ezwinports/files/)
 → Look for a file like `gettext-0.19.8.1-w32-bin.zip`.
 * Or [GnuWin32 gettext](https://gnuwin32.sourceforge.net/packages/gettext.htm).
-
 Extract or install it somewhere easy to find, e.g.: `C:\gettext\`
 Inside, you should see a `bin` folder with tools like `msgfmt.exe`, `xgettext.exe`.
 
 🔧 **Step 2: Add gettext to PATH**
-
 1. Press **Win + R**, type: `sysdm.cpl` and hit Enter.
 2. Go to **Advanced → Environment Variables**.
 3. Under **System variables**, find `Path` and click **Edit**.
@@ -36,13 +29,12 @@ Inside, you should see a `bin` folder with tools like `msgfmt.exe`, `xgettext.ex
 5. Click **OK** to save.
 
 🔧 **Step 3: Verify Installation**
-
 1. Open a new **Command Prompt** (important — restart it so PATH updates).
 2. Run:
 * `where msgfmt`
 * `msgfmt --version` or `"C:\gettext\bin\msgfmt.exe" --version`
-
 If it prints a version number, gettext is installed correctly.
+
 🔧 **Step 4: Use with Django**
 Now you can run: first rewrite the and set model.py foreach for .po to be created
 // Create/update .po files:
@@ -54,14 +46,13 @@ Now you can run: first rewrite the and set model.py foreach for .po to be create
 * `python manage.py compilemessages`
 
 # FOR any other app:
-* e.g, `cd C:\Users\Administrator\dusrms\core` 
+* e.g, `cd C:\Users\Administrator\PROJECTNAME\core` 
 // core should the app next to projectname
 * `mkdir locale`
 * `mkdir locale\am`
 * `mkdir locale\am\LC_MESSAGES`
 
 #### ✅ 1️⃣ Validate **all** locale files (safe & fast)
-
 **Step A — Find all .po files**
 From your project root:
 // `dir -Recurse -Filter django.po`
@@ -73,7 +64,6 @@ You should see paths like:
 
 **Step B — Check Language vs Plural-Forms**
 Use this **golden table** (correct rules):
-
 | Language | Code | Plural-Forms |
 | --- | --- | --- |
 | Amharic | `am` | `nplurals=1; plural=0;` |
@@ -82,33 +72,24 @@ Use this **golden table** (correct rules):
 | Arabic | `ar` | `nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);` |
 
 👉 **Rule:** `Language:` **must match** the correct plural rule.
-
 **Step C — Delete all compiled .mo files**
 This avoids stale corruption:
-
 * run use powershell
 * `del locale\am\LC_MESSAGES\django.mo` ---- for project_name/
 * `del /s /q locale\*\LC_MESSAGES\*.mo`
 * (Do the same inside app-level `locale/` folders if you have them.)
-
 **Step D — Recompile cleanly**
 `python manage.py compilemessages -i venv`
-
 ✅ If this passes, your translations are 100% valid.
-
 #### 🛡️ 2️⃣ Prevent this problem forever (best practices)
-
 ✅ **Rule 1: Never guess plural rules**
 Always use Django’s generated header.
 * // `python manage.py makemessages -l am`
 Django writes the **correct `Plural-Forms` automatically**.
-
 ✅ **Rule 2: Don’t copy headers between languages**
 Only copy **msgid/msgstr**, never headers.
-
 ✅ **Good:**
 Each language keeps its own header.
-
 ### ## 🧠 “Rule of 5” memory trick 😉
 1. **Language code**
 2. **Correct plural rule**
@@ -119,15 +100,12 @@ Each language keeps its own header.
 ### STEP 3 ✅. INSTALL DEPENDENCY, PACKAGE TO THE VENV/
 * → Install **Python 3.13+**
 * → Install any code editor (e.g., **Visual Studio Code**)
-
 #### 2. Make sure you have the Django application you want to deploy
 #### 3. Understand your server choice: WSGI vs ASGI
-
 * WSGI → Traditional synchronous Django apps
 * ASGI → Supports WebSockets, async tasks, real-time features
-
 This guide uses **ASGI** + **Uvicorn** for deployment:
-🔗 [[https://docs.djangoproject.com/en/5.2/howto/deployment/](https://docs.djangoproject.com/en/5.2/howto/deployment/)]
+🔗 [https://docs.djangoproject.com/en/5.2/howto/deployment/)]
 
 👉 Before install For SQL Server, make sure you have the
 👉 ODBC Driver 18 for SQL Server installed on your system
@@ -204,7 +182,7 @@ This guide uses **ASGI** + **Uvicorn** for deployment:
 # for security - SSL
 * `choco install mkcert`
 * `mkcert -install`
-# (C:\Users\Administrator\dusrms):
+# (C:\Users\Administrator\PROJECTNAME):
 * `mkcert 127.0.0.1 localhost`
 
 🔹 **Firewall: Allow 80/443 ONLY**

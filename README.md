@@ -1,0 +1,2 @@
+# -Professional-Django-Deployment-Guide-ASGI-Uvicorn-
+Master professional Django deployment on Windows with this guide! 🚀 Learn to set up ASGI + Uvicorn, handle gettext localization, and secure your app with SSL &amp; firewall rules. Automate everything using NSSM for a robust production environment. Get the .env, settings, and .ps1 scripts you need to go live today. 🔗 [Insert Link] #Django #Python

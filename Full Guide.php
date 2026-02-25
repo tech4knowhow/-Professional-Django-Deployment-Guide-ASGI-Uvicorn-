@@ -43,10 +43,10 @@ STEP 2✅.LOACALIZATION ALSO CONSIDER FOR GETTEXT AND CONFIGURE IT:
 	   //Compile .po to .mo (this uses msgfmt):
 	   django-admin compilemessages
 	   //Django will use gettext to generate and compile your `.po` and `.mo` files.
-	   C:\Users\Administrator\appnameORprojectname\locale\am\LC_MESSAGES
+	   C:\Users\Administrator\PROJECTNAME\locale\am\LC_MESSAGES
 	   python manage.py compilemessages 
 	   #FOR any other app:
-	   e.g, cd C:\Users\Administrator\dusrms\core // core should the app next to projectname
+	   e.g, cd C:\Users\Administrator\PROJECTNAME\core // core should the app next to projectname
 	   mkdir locale
 	   mkdir locale\am
 	   mkdir locale\am\LC_MESSAGES
@@ -182,7 +182,7 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 #for security - SSL
 choco install mkcert
 mkcert -install
-#(C:\Users\Administrator\dusrms):
+#(C:\Users\Administrator\PROJECTNAME):
 mkcert 127.0.0.1 localhost
 🔹 Firewall: Allow 80/443 ONLY
 # You need to create rules that allow the web traffic but block the "back doors" to your database and cache from the outside world.
@@ -229,4 +229,5 @@ SUMMMARY ✅.TO BE CONSIDERED DURING DEPLOY DJANGO WEB APP
 → Consider security
 → Run the app use providedcode.ps1 start manually, providedcode.ps1 with Task Scheduler configured, nssm(recommended)
 → Confiure the app/project for local network and www/public as need
+
 

@@ -61,9 +61,9 @@ Now you can run: first rewrite the and set model.py foreach for .po to be create
 e.g, `cd C:\Users\Administrator\dusrms\core` 
 // core should the app next to projectname
 
-`mkdir locale`
-`mkdir locale\am`
-`mkdir locale\am\LC_MESSAGES`
+* `mkdir locale`
+* `mkdir locale\am`
+* `mkdir locale\am\LC_MESSAGES`
 
 #### ✅ 1️⃣ Validate **all** locale files (safe & fast)
 

@@ -1,4 +1,4 @@
-# ✅ DEPLOYMENT GUIDE FOR A PYTHON DJANGO WEB APPLICATION (ASGI + Uvicorn) 
+# 🚀 Deployment Guide: Python Django Web Application (ASGI + Uvicorn)
 
 👉 To maintain a professional workflow and avoid manual changes to your .env values when switching between your local machine and a production server, it is best practice to split your settings files:
 
@@ -6,8 +6,8 @@
 * 😉 `PROJECTNAME/settings/development.py`
 * 😉 `PROJECTNAME/settings/production.py`
  
-### STEP 1 ✅. GET AND LOCATE THE APP
-### STEP 2 ✅. LOCALIZATION ALSO CONSIDER FOR GETTEXT AND CONFIGURE IT:
+### Step 1 ✅. Get and Locate the App
+### Step 2 ✅. Localization & Gettext Configuration
 // INTERNATIONALIZATION Configuration
 * `pip install --upgrade Pygments`
 * install package - download libintl-0.14.4-bin for win os
@@ -97,7 +97,7 @@ Each language keeps its own header.
 4. **Delete .mo before compiling**
 5. **Python 3.12 is strict**
  
-### STEP 3 ✅. INSTALL DEPENDENCY, PACKAGE TO THE VENV/
+### Step 3 ✅. Environment & Dependencies
 * → Install **Python 3.13+**
 * → Install any code editor (e.g., **Visual Studio Code**)
 #### 2. Make sure you have the Django application you want to deploy
@@ -130,7 +130,7 @@ This guide uses **ASGI** + **Uvicorn** for deployment:
 **Delete the existing virtual environment (Optional)**
 `Remove-Item -Recurse -Force .\venv`
 
-### STEP 4 ✅. DJANGO SECURITY HARDENING CHECKLIST
+### Step 4 ✅. Django Security Hardening
 🔧 **Configuration**
 * `DEBUG = False` in `settings.py`
 * `ALLOWED_HOSTS` set to your domain/IP
@@ -205,7 +205,7 @@ This guide uses **ASGI** + **Uvicorn** for deployment:
 # Verification Command: To see exactly what the world sees on your server, run:
 * `Get-NetFirewallRule | Where-Object { $_.Enabled -eq 'True' -and $_.Direction -eq 'Inbound' } | Select-Object DisplayName, Action`
 
-### STEP 5 ✅. AFTER DEPLOY TO AUTO RUN APP USE: TASK SCHEDULER OR NSSM / RECOMMENDED/
+### Step 5 ✅. Auto-Run App (NSSM)
 → Open PowerShell as Administrator and run this to install Chocolatey:
 * `Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))`
 
@@ -220,15 +220,14 @@ This guide uses **ASGI** + **Uvicorn** for deployment:
 
 👉 To aut run the app on browser nssm is prefered as the .ps1 code should configured throurgh Task Scheduler and it is not better consistent
 
-### STEP 6 ✅. NOTE: CONFIURE THE APP/PROJECT FOR LOCAL NETWORK AND WWW/PUBLIC AS NEED
-
-### SUMMMARY ✅. TO BE CONSIDERED DURING DEPLOY DJANGO WEB APP
-→ Get and locate the app,
-→ Loacalization also consider for gettext and configure it
-→ Install dependency/package to the venv
-→ Consider security
-→ Run the app use providedcode.ps1 start manually, providedcode.ps1 with Task Scheduler configured, nssm(recommended)
-→ Confiure the app/project for local network and www/public as need
+### Step 6 ✅. Note: Configure the app/project for local and public as needed
+### Summary ✅. Consider the following during deploy Django web appln
+* → Get and locate the app,
+* → Loacalization also consider for gettext and configure it
+* → Install dependency/package to the venv
+* → Consider security
+* → Run the app use providedcode.ps1 start manually, providedcode.ps1 with Task Scheduler configured, nssm(recommended)
+* → Confiure the app/project for local network and www/public as need
 
 ## 📄 License
 This guide and associated scripts are provided "as-is" for the community. Use responsibly.

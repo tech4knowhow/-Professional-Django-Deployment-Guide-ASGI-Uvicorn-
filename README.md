@@ -58,7 +58,9 @@ Now you can run: first rewrite the and set model.py foreach for .po to be create
 
 # FOR any other app:
 
-e.g, `cd C:\Users\Administrator\dusrms\core` // core should the app next to projectname
+e.g, `cd C:\Users\Administrator\dusrms\core` 
+// core should the app next to projectname
+
 `mkdir locale`
 `mkdir locale\am`
 `mkdir locale\am\LC_MESSAGES`
@@ -279,10 +281,13 @@ Works on: **PowerShell Version 5.1.14393.5066**
 ### STEP 6 ✅. NOTE: CONFIURE THE APP/PROJECT FOR LOCAL NETWORK AND WWW/PUBLIC AS NEED
 
 ### SUMMMARY ✅. TO BE CONSIDERED DURING DEPLOY DJANGO WEB APP
-
 → Get and locate the app,
 → Loacalization also consider for gettext and configure it
 → Install dependency/package to the venv
 → Consider security
 → Run the app use providedcode.ps1 start manually, providedcode.ps1 with Task Scheduler configured, nssm(recommended)
 → Confiure the app/project for local network and www/public as need
+
+## 📄 License
+This guide and associated scripts are provided "as-is" for the community. Use responsibly.
+ 
